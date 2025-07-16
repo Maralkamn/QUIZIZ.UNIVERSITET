@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz App - Moni</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js"></script>
+  <script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
+</head>
+<body>
+
+  <h1>🧠 Quiz App</h1>
+
+  <input type="file" id="upload-file" accept=".pdf,.docx" />
+  <div id="upload-status"></div>
+
+  <div id="section-select" style="display:none;">
+    <h2>📚 Бөлімді таңдаңыз</h2>
+    <div id="block-buttons" class="block-buttons"></div>
+  </div>
+
+  <!-- 🟢 Дөңгелек батырмалар -->
+  <div id="top-controls" class="floating-buttons">
+    <button title="Түн/Күн режимі" onclick="toggleTheme()">🌗</button>
+    <button title="Статистика" onclick="showStats()">📊</button>
+    <button title="Кейін көру" onclick="showMarked()">🔁</button>
+    <button title="Таңдаулы" onclick="showFavorites()">⭐</button>
+  </div>
+
+  <!-- 🧩 Сұрақ тест бөлігі -->
+  <div id="quiz-container" style="display:none;">
+    <div id="timer">⏱️ 15</div>
+    <div id="quiz-question"></div>
+    <div id="quiz-options"></div>
+    <div id="feedback"></div>
+    <div id="extras" style="text-align:center;"></div>
+    <button id="next-btn" style="display:none;" onclick="nextQuestion()">➡️ Келесі</button>
+  </div>
+
+  <!-- ✅ Нәтиже -->
+  <div id="result" style="display:none;">
+    <h2 id="score"></h2>
+    <button onclick="showMistakes()">🧠 Қайталау</button>
+    <button onclick="goBackToSections()">🔙 Артқа</button>
+  </div>
+
+  <footer>
+    Site created by <strong>Moni</strong>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
