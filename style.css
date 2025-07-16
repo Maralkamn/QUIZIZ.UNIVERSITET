@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+  background: #0d0d0d;
+  color: #f0f0f0;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+  user-select: none;
+}
+body.light {
+  background: #f9f9f9;
+  color: #111;
+}
+
+body.light button {
+  background: #e0e0e0;
+  color: #111;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #00ffcc;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px #00ffcc88;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #00e676;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 0 0 6px #00e676aa;
+}
+
+input[type="file"] {
+  background: #1f1f1f;
+  color: #ccc;
+  border: 2px dashed #333;
+  padding: 16px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  width: 280px;
+  max-width: 90vw;
+  cursor: pointer;
+}
+
+input[type="file"]:hover {
+  border-color: #00e676;
+  background: #111;
+  color: #fff;
+}
+
+button {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 14px 22px;
+  font-size: 1.1rem;
+  margin: 10px auto;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(0,255,204, 0.1);
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(120deg, #00ffcc, #0066ff);
+  transition: all 0.4s ease;
+  z-index: 0;
+  opacity: 0.2;
+  border-radius: 8px;
+}
+
+button:hover::before {
+  left: 0;
+  opacity: 0.4;
+}
+
+button:hover {
+  background: #111;
+  color: #00ffcc;
+  box-shadow: 0 0 15px #00ffccaa;
+}
+
+#quiz-options button {
+  text-align: left;
+  margin-bottom: 15px;
+  font-weight: 500;
+  background-color: #222;
+  transition: background-color 0.3s ease;
+}
+
+.correct {
+  background-color: #00c853 !important;
+  color: white !important;
+  font-weight: bold;
+  box-shadow: 0 0 15px #00c853cc;
+}
+
+.incorrect {
+  background-color: #d50000 !important;
+  color: white !important;
+  font-weight: bold;
+  box-shadow: 0 0 15px #d50000cc;
+}
+
+#quiz-container, #result, #section-select {
+  max-width: 600px;
+  margin: auto;
+}
+
+#timer {
+  text-align: right;
+  font-size: 1.2rem;
+  color: #ffaa00;
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px #ffaa00bb;
+}
+
+#upload-status {
+  text-align: center;
+  color: #00ffcc;
+  font-weight: bold;
+  margin-top: 10px;
+  text-shadow: 0 0 5px #00ffccaa;
+}
+
+.block-buttons button {
+  margin: 8px 6px;
+  width: 120px;
+}
+
+footer {
+  text-align: center;
+  color: #888;
+  margin-top: 60px;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  opacity: 0.6;
+  user-select: none;
+}
+footer strong {
+  color: #00e676;
+}
+
+/* Мобильді адаптивтілік */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+  button {
+    font-size: 1rem;
+    padding: 12px 16px;
+  }
+  input[type="file"] {
+    font-size: 1rem;
+    padding: 12px;
+    width: 90vw;
+  }
+  .block-buttons button {
+    width: 100%;
+    margin: 8px 0;
+  }
+}
+/* 👉 top-controls басқару панелі */
+.top-bar {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  display: flex;
+  gap: 8px;
+  background: rgba(20, 20, 20, 0.8);
+  padding: 8px 10px;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 10px #00ffcc33;
+}
+
+.top-bar button {
+  padding: 8px 12px;
+  font-size: 1rem;
+  background: #1f1f1f;
+  color: #00ffcc;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.top-bar button:hover {
+  background: #00ffcc;
+  color: #0d0d0d;
+}
+
+body.light .top-bar {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 10px #00000022;
+}
+
+body.light .top-bar button {
+  background: #eeeeee;
+  color: #333;
+}
+
+body.light .top-bar button:hover {
+  background: #00e676;
+  color: white;
+}
+
+/* 📱 Мобиль нұсқа */
+@media (max-width: 600px) {
+  .top-bar {
+    top: auto;
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+}
+/* 🔘 Жылжымалы дөңгелек батырмалар */
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+}
+
+.floating-buttons button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.3rem;
+  background: #222;
+  color: #00ffcc;
+  cursor: pointer;
+  box-shadow: 0 0 8px #00ffcc44;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.floating-buttons button:hover {
+  background: #00ffcc;
+  color: #111;
+  transform: scale(1.1);
+}
+
+body.light .floating-buttons button {
+  background: #eee;
+  color: #00796b;
+  box-shadow: 0 0 8px #8884;
+}
+
+body.light .floating-buttons button:hover {
+  background: #00e676;
+  color: white;
+}
+@media (max-width: 600px) {
+  .floating-buttons {
+    bottom: 15px;
+    right: 15px;
+    gap: 10px;
+  }
+}
+
